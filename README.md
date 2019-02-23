@@ -1,2 +1,2 @@
 # python-learnings
-Python Learnings
+Python Learnings from Basics to Advanced
