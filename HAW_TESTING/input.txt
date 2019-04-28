@@ -1,0 +1,7 @@
+Brand: 'Brand-X', 'Brand-Y', 'Brand-A'
+Version: 1, 2, 3
+Platform: '98', 'NT', '2000', 'XP'
+Colors : 'green', 'yellow', 'blue'
+
+
+

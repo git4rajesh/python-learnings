@@ -1,0 +1,57 @@
+Nov-20th,2017:
+-------------
+
+1. itertools module:
+    combination method
+    chain method
+    product method
+    permutation method
+
+
+2. Reading from a yaml file and constructing an Ordered Dict.
+    Use of module 'yamlordereddictloader'
+
+
+3. Compare two lists which are of different length.
+    a. convert them into Set
+    b. Do an intersection between the two sets.
+
+
+Nov-22nd:
+-------
+4. flatten a tuple or a list recursively.
+
+    PEP 380: Syntax for Delegating to a Subgenerator:
+
+
+    def flatten(l):
+    for el in l:
+        if isinstance(el, collections.Iterable) and not isinstance(el, (str, bytes)):
+            yield from flatten(el)
+        else:
+            yield el
+
+
+Nov-23rd:
+-------
+5. Understand the code snippet:
+    max(temp_len_dct, key=temp_len_dct.get)
+
+
+
+Nov-24th:
+----------
+6. Get an index of a key from an OrderedDict.
+
+7.  Create an empty list
+    lst_empty = [''] * 4
+
+8. Maintain the order of a list when creating a Set:
+    sorted(set(l1), key=l1.index)
+
+Nov-25th:
+--------
+9. Abstract Syntax Tree
+10. inspect module
+
+

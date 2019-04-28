@@ -1,0 +1,16 @@
+Brand: ['Brand-X', 'Brand-Y', 'Brand-A', 'Brand-B']
+Version: [1, 2, 3, 4]
+Platform: ['98', 'NT', '2000', 'XP']
+Colors : ['green', 'yellow', 'blue', 'red']
+
+Ignore Values :
+                - ['Brand-X', '98']
+                - [1, 'NT']
+
+
+
+
+
+
+
+

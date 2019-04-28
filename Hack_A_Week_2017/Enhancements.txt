@@ -1,0 +1,6 @@
+Features for Future Work:
+=========================
+1. Ability to give Constraints
+2. Assigning Weights to Values
+3. Develop a standalone UI interface or a web based interface
+4. Cover edge cases : Using negative values
