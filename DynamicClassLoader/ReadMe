@@ -1,0 +1,9 @@
+1. importlib.import_module(module_name)
+  We can import a module dynamically when its given as String
+
+2. Get the attributes as below:
+
+my_class = getattr(module, class_name)
+
+    getattr, hasattr and setattr are the methods.
+
