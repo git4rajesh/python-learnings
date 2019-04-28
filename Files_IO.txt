@@ -1,0 +1,32 @@
+File Operations:
+---------------
+1. 
+
+Since the version 3.x, Python has made a clear distinction between str(text) and bytes (8-bits).
+	Files are stored in bytes in the disk, we need to decode them into str when we read into Python.
+	Similarly, encoding is performed while writing texts to the file.
+	
+	The default encoding is platform dependent. In windows, it is 'cp1252' but 'utf-8' in Linux. Hence, we must not
+	rely on the default encoding otherwise, our code will behave differently in different platforms.
+	Thus, this is the preferred way to open a file for reading in text mode.
+	
+	
+	f = open("test.txt",mode = 'r',encoding = 'utf-8')
+	
+	
+2. Closing a file:
+
+Closed when the block inside with is exited. We don't need to explicitly call the close() method. It is done internally.
+	
+	with open("test.txt",encoding = 'utf-8') as f:
+		#file operations
+		
+		
+	example:
+			def file_read(file_name):
+				#fa = open(file_name, 'rb')
+				with open (file_name,'rb') as f:
+					file_content = f.read()
+				return file_content
+
+	

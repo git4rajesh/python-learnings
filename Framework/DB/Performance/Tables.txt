@@ -1,0 +1,36 @@
+queries.py
+-----------
+1. RPM_performance_reports
+2. RPM_performance_report_responses
+3. RPM_performance_env_configs
+4. RPM_performance_env_users
+5. RPM_performance_history
+
+
+INSERT_REPORTS = """INSERT INTO RPM_performance_reports (env, db_name, user_name, report_key, report_name, description, category_key, time_taken, last_run, response_code, is_xml, start_time) 
+					VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"""
+
+DELETE_ONE_REPORT = """DELETE FROM RPM_performance_reports 
+						WHERE 
+						env = (?) AND db_name = (?) AND user_name = (?) AND
+						report_key = (?)"""
+
+
+SELECT_REPORT_RESPONSE = """SELECT report_key, response_code, content, last_run FROM RPM_performance_report_responses 
+							WHERE env = (?) AND db_name = (?)
+							AND user_name = (?) AND report_key = (?)"""
+INSERT_REPORT_RESPONSE = """INSERT INTO RPM_performance_report_responses 
+							(env, db_name, user_name, report_key, response_code, content, last_run) 
+							VALUES (?, ?, ?, ?, ?, ?, ?)"""
+
+INSERT_ENV_USERS = """INSERT INTO RPM_performance_env_users (env, env_url, db_name, user_name, pwd)
+					  VALUES (?, ?, ?, ?, ?)
+				   """
+
+
+SELECT_ENV_CONFIGS = """SELECT env, db_name, user_name, report_key, report_name, description, category_key, category_name, url_path 
+						FROM RPM_performance_env_configs ORDER BY report_name"""
+INSERT_ENV_CONFIGS = """INSERT INTO RPM_performance_env_configs (env, db_name, user_name, report_key, report_name, description, category_key, category_name, url_path)
+					    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"""
+
+

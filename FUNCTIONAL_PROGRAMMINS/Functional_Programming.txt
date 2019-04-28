@@ -1,0 +1,73 @@
+Imperative
+Declarative
+Procedural
+Functional programming is Declarative rather than imperative.
+Focus on what to do and the code will decide , how to do.
+
+Imperative programming says how to do it . say we put a for loop to iterate.
+Also Secondly, Mutability.
+
+
+Declarative programming says what to do. Also non mutabile.
+
+We can do Declarative programming which is not Functional programming but Functional
+programming is Declarative.
+
+FP is all about States. Infact Absence of States.
+What is a State?
+
+A state of a Door, either Open or Close.
+Door.open = True
+Door.open = False
+
+Community = 'Awesome'
+
+Community = Community + '!!'
+
+Side Effects
+==============
+
+names = ['raj', 'laks', 'amr']
+
+def double_names():
+	for index, name in enumerate(names):
+		names[index] = name + name
+	print(names)
+	
+	
+	
+The list is outside the function and we change the value inside a function.This is called side effects. 
+
+Problems with States:
+1. Race Conditions
+2. Complexity
+3. Unpredictability.
+
+
+
+https://www.youtube.com/watch?v=6f5dt923FmQ (101)
+http://anoukruhaak.com/slides-otsconf.html
+
+First class Functions. ie Functions are Objects.
+New Objects instead of modifying existing ones.
+Recursion & Accumalators over Loops and Mutations.
+If you are not passing by reference then it doesnt mutate.
+
+Referential Transparency
+flatmap in python
+tail call optimization to optimize recursion but not there in Python.
+
+what about libraries used in Python. Dont they mutate since they may not be in FP.
+
+https://www.youtube.com/watch?v=LkpHQL863mw
+
+https://docs.python.org/2/howto/functional.html
+https://www.ibm.com/developerworks/linux/library/l-prog/index.html
+http://www.bogotobogo.com/python/python_fncs_map_filter_reduce.php
+http://www.diveintopython.net/functional_programming/index.html
+http://anandology.com/python-practice-book/functional-programming.html
+
+
+
+
+	

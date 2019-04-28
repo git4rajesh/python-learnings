@@ -1,0 +1,98 @@
+1. Abstract class implementation
+
+from abc import ABCMeta, abstractmethod
+class BaseTest(metaclass=ABCMeta):
+
+2. Usage of property:
+	  def _get_id(self):
+        if hasattr(self, '_id'):
+            return self._id
+        return None
+
+    def _set_id(self, value):
+        self._id = value
+    id = property(_get_id, _set_id)
+	
+3. Singleton
+class Environment(metaclass=Singleton):
+
+class Singleton(type):
+  _instances = {}
+
+  def __call__(cls, *args, **kwargs):
+      if cls not in cls._instances:
+          cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
+      return cls._instances[cls]
+	  
+A class maintains all its instance/objects in a dictionary as cls.
+what is __call__()
+
+
+4. Interaction of DB:
+
+from automation.core.db import db as dbo
+from automation.core.db import queries
+from automation.core.db.crud import Crud
+
+qhandler = Crud(dbo.DB())
+
+5.SQL
+
+6. How cert gets populated
+
+7. Can I access a class member directly without prefixing.
+
+8. request.py
+
+Difference between soap , self.request.get() and rest, self.request.get()
+
+10. request.py need not have logic for getting PVE and Rally Certificates. They can very well get into cert.py
+11.def initialize_soap_request can also move out of request.py
+
+12. Commmand line arguements to be passed:
+	args = sys.argv
+	pve_env = args[1]
+        pve_db = args[2]
+        rally_env = args[3]
+        integ_env = args[4]
+        test_type = args[5]
+		
+13.Timing a run:
+	import timeit
+	time = timeit.Timer(run_suite.run).timeit(number=1)
+	
+14. tc_76982_b.py wont be captured by regex in run_test_suite.py
+
+15. Listing of files inside a dir:
+return [file.name for file in os.scandir(my_dir) if re.match('tc_\d+.py', file.name)]
+
+16. Anonymous function : lambda
+
+	list_module_names = map(lambda fname: fname.split('.')[0], list_of_files)
+	
+	lambda takes an arguement.
+	that is manipulated in the logic of lambda function
+	
+	
+17. list_of_instances = map(self.get_module_instance, list_module_names)
+
+
+18. importing a module dynamically:
+	prefix_path = 'automation.integration.tests'
+    module_name = prefix_path + '.' + module_name
+	module = importlib.import_module(module_name)	
+        try:
+            my_class = getattr(module, class_name)
+        except AttributeError:
+            my_class = getattr(module, 'TestCase')
+
+        instance = my_class(self.pve_env, self.pve_db, self.rally_env, self.integ_env)
+        return instance
+		
+18b. getattr() util 
+
+	To access a class method using getattr and invoke it:
+	getattr(flow_obj, 'verify') (flow_ev_name, snap_shot, unsubscribe, encoding)
+
+19.Getting timestamp :
+timestamp = str(datetime.now()).replace(' ', '_').replace('.', '_')

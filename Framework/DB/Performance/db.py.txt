@@ -1,0 +1,20 @@
+ def read(self, query, params=()):
+        rs = []
+        if config.IS_PROD:
+            cursor = self.conn.cursor()
+            cursor.execute(query, params)
+        else:
+
+            cursor = self.conn.execute(query, params)
+        for row in cursor:
+            rs.append(row)
+        cursor.close()
+        return rs
+
+    def execute(self, query, params=()):  # Insert / Update / Delete
+        cursor = self.conn.cursor()
+        cursor.execute(query, params)
+        cursor.close()
+
+
+Doubt on this. Which execute is being called?
