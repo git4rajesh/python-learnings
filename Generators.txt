@@ -1,0 +1,41 @@
+1. How are generator different from lists
+
+Generator Comprehension creates an Iterator
+
+A Generator is an Iterator and produces data Lazily
+
+What is an Iterator 
+What is an Iterable
+
+List, Dictionary etc are Iterable.
+So when we give it to Iter() produces Iterator.
+An Iterator then calls next() method.
+
+A Python Iterable is an Object from which iter() function can produce an Iterator.
+
+
+On Otherhand a Generator is an Iterator. We can call next() directly here.
+Lazy Iterable
+
+Function with *args and **kargs
+
+
+Generator:
+
+A function that has yield statements
+
+def my_gen():
+    """a simple generator function"""
+    n = 1
+    print("This is printed first")
+    # Generator function contains yield statements
+    yield n
+
+This yield function we can call from a for loop.
+A Generator is returned and we can manipulate that.
+
+>>> for item in my_gen():
+...     print(item)
+...     
+This is printed first
+1

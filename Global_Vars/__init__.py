@@ -1,0 +1,1 @@
+DICT_SAMPLE = {'a':1}
