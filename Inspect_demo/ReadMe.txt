@@ -1,0 +1,1 @@
+https://www.stefaanlippens.net/python_inspect/
