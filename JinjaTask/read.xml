@@ -1,0 +1,10 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://schemas.planview.com/PlanviewEnterprise/Services/TaskService3/2012/08" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<ns:Read>
+			<ns:keys>
+				<arr:string> {{ dict_nodes.string }} </arr:string>
+			</ns:keys>
+		</ns:Read>
+	</soapenv:Body>
+</soapenv:Envelope>

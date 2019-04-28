@@ -1,0 +1,45 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://schemas.planview.com/PlanviewEnterprise/Services/TaskService3/2012/08" xmlns:ns1="http://schemas.planview.com/PlanviewEnterprise/OpenSuite/Dtos/TaskDto2/2012/08" xmlns:plan="http://schemas.datacontract.org/2004/07/Planview.Enterprise.OpenSuite.Dtos.Configuration">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<ns:Update>
+			<ns:dtos>
+				<ns1:TaskDto2>
+                    {% if dict_nodes.IsMilestone == 'true' and 'ScheduleStartDate' in dict_nodes %}
+					<ns1:Description>{{dict_nodes.Description}}</ns1:Description>
+                    <ns1:Duration>{{'0'}}</ns1:Duration>
+                    <ns1:EnterProgress>{{dict_nodes.EnterProgress}}</ns1:EnterProgress>
+					<ns1:FatherKey>{{dict_nodes.FatherKey}}</ns1:FatherKey>
+					<ns1:IsMilestone>{{dict_nodes.IsMilestone}}</ns1:IsMilestone>
+					<ns1:Key>{{dict_nodes.Key}}</ns1:Key>
+                    <ns1:ScheduleStartDate>{{dict_nodes.ScheduleStartDate}}</ns1:ScheduleStartDate>
+                    {% else %}
+					    {% if 'ActualStartDate' in dict_nodes and 'ActualFinishDate' in dict_nodes %}
+                        <ns1:ActualFinishDate>{{dict_nodes.ActualFinishDate}}</ns1:ActualFinishDate>
+                        <ns1:ActualStartDate>{{dict_nodes.ActualStartDate}}</ns1:ActualStartDate>
+                        <ns1:Description>{{dict_nodes.Description}}</ns1:Description>
+                        <ns1:EnterProgress>{{dict_nodes.EnterProgress}}</ns1:EnterProgress>
+                        <ns1:FatherKey>{{dict_nodes.FatherKey}} </ns1:FatherKey>
+                        <ns1:IsMilestone>{{dict_nodes.IsMilestone}}</ns1:IsMilestone>
+                        <ns1:Key>{{dict_nodes.Key}}</ns1:Key>
+                        {% elif 'ActualStartDate' in dict_nodes and 'ScheduleStartDate' in dict_nodes %}
+                        <ns1:ActualStartDate>{{dict_nodes.ActualStartDate}}</ns1:ActualStartDate>
+                        <ns1:Description>{{dict_nodes.Description}}</ns1:Description>
+                        <ns1:EnterProgress>{{dict_nodes.EnterProgress}}</ns1:EnterProgress>
+                        <ns1:FatherKey>{{dict_nodes.FatherKey}}</ns1:FatherKey>
+                        <ns1:Key>{{dict_nodes.Key}}</ns1:Key>
+                        <ns1:ScheduleFinishDate>{{dict_nodes.ScheduleFinishDate}}</ns1:ScheduleFinishDate>
+                        <ns1:ScheduleStartDate>{{dict_nodes.ScheduleStartDate}}</ns1:ScheduleStartDate>
+                        {% else %}
+                        <ns1:Description>{{dict_nodes.Description}}</ns1:Description>
+                        <ns1:EnterProgress>{{dict_nodes.EnterProgress}}</ns1:EnterProgress>
+                        <ns1:FatherKey>{{dict_nodes.FatherKey}}</ns1:FatherKey>
+                        <ns1:Key>{{dict_nodes.Key}}</ns1:Key>
+                        <ns1:ScheduleFinishDate>{{dict_nodes.ScheduleFinishDate}}</ns1:ScheduleFinishDate>
+                        <ns1:ScheduleStartDate>{{dict_nodes.ScheduleStartDate}}</ns1:ScheduleStartDate>
+                        {% endif %}
+					{% endif %}
+				</ns1:TaskDto2>
+			</ns:dtos>
+		</ns:Update>
+	</soapenv:Body>
+</soapenv:Envelope>
