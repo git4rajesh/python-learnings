@@ -1,0 +1,45 @@
+1. y =f(x)
+2. Functions are Data in Python
+
+3. Use Lambda wherever possible. Lambda is used if the function is simple and not used anywhere.
+
+4. In Map , give only the function name and not the call.
+
+map(create_dict_with_len, list_of_strings)
+	
+	
+	def create_dict_with_len(my_key_string):
+	
+The actual function definition will take the parameter but not inside map.
+Inside Map it would be called without any parameters
+
+
+
+Full code:
+----------
+
+list_of_strings = ['Ram','Rahim','Robert','A','AB', 'ABC']
+
+
+def create_dict_with_len(my_key_string):
+    my_dict = {}
+    my_dict[my_key_string] = len(my_key_string)
+    yield my_dict
+
+
+for gen in map(create_dict_with_len, list_of_strings):
+    print(next(gen))
+	
+	
+	
+o/p:
+C:\Users\rvenkataraman\AppData\Local\Programs\Python\Python35\python.exe D:/XMLUtils/sample_string.py
+{'Ram': 3}
+{'Rahim': 5}
+{'Robert': 6}
+{'A': 1}
+{'AB': 2}
+{'ABC': 3}
+
+
+When a Map function has a yield, it returns a Generator. So it should be called in a for loop with next()

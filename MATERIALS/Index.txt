@@ -1,0 +1,4 @@
+1. Learn Python the Hard Way
+2. Writing Idiomatic Python 3.3 
+3.https://jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/
+http://learnpythonthehardway.org/book/

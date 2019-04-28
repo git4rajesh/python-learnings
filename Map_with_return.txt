@@ -1,0 +1,23 @@
+list_of_strings = ['Ram','Rahim','Robert','A','AB', 'ABC']
+
+
+def create_dict_with_len(my_key_string):
+    my_dict = {}
+    my_dict[my_key_string] = len(my_key_string)
+    return my_dict
+
+
+list_of_my_dict = list((map(create_dict_with_len, list_of_strings)))
+print((list_of_my_dict))
+
+O/P:
+[{'Ram': 3}, {'Rahim': 5}, {'Robert': 6}, {'A': 1}, {'AB': 2}, {'ABC': 3}]
+
+
+Map when it calls a function with Return statement as above , it should be converted to a list to get a meaningful value.
+
+
+	list_of_my_dict = list((map(create_dict_with_len, list_of_strings)))
+	
+	The whole answer got in a list.So we can just print the list as above:
+		print((list_of_my_dict))

@@ -1,0 +1,13 @@
+inputs:
+  value1 : 2
+  value2 : 3
+weights_layer_1:
+  w1 : 0.11
+  w2 : 0.12
+  w3 : 0.21
+  w4 : 0.08
+weights_layer_2:
+  w5: 0.14
+  w6: 0.15
+learning_rate:
+  alpha: 0.05

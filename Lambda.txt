@@ -1,0 +1,76 @@
+Lambda:
+
+lambda arguments: expression
+
+Lamda has to return a Value.It cant return a None so we cant just have a print statement inside a lamba logic.
+
+
+Lambda functions can have any number of arguments but only one expression. 
+The expression is evaluated and returned. 
+Lambda functions can be used wherever function objects are required.
+
+>>> sqr = lambda n : n * n
+>>> sqr(5)
+25
+
+>>> type(sqr)
+<class 'function'>
+
+So 'sqr' is a Function Object.
+
+dict to json:
+--------------
+import json
+d = {'a':1, 'b':2}
+
+>>> dict2json = lambda d : json.dumps(d)
+>>> dict2json(d)
+'{"a": 1, "b": 2}'
+
+In Python, we generally use it as an argument to a higher-order function (a function that takes in other functions as arguments).
+Lambda functions are used along with built-in functions like filter(), map() etc.
+
+
+Lambda with Set:
+-----------------
+Example:
+--------
+>>> remove_duplicates = lambda iterable : set(iterable)
+
+>>> remove_duplicates('roooot')
+{'o', 'r', 't'}
+
+>>> l = [1,3,4,1,2,3]
+>>> remove_duplicates(l)
+{1, 2, 3, 4}
+Set doesnot maintains Order.
+
+
+Since Set doesnt maintains Order. Use Ordered Dict to get Ordered Unique Values as below:
+=========================================================================================
+
+Use a Ordered Dictionary to create a Non-duplicated list from a given list.
+>>> str = 'roooot'
+>> d = collections.OrderedDict.fromkeys(str))
+>>> d
+OrderedDict([('r', None), ('o', None), ('t', None)])
+>>> d.keys()
+odict_keys(['r', 'o', 't'])
+>>> l = list(d.keys())
+>>> l
+['r', 'o', 't']
+
+
+===================================================================================================
+
+
+Example 3:
+--------
+Converting a list to int using Lambda and Map:
+----------------------------------------------
+convert_int = lambda iterable : map(int,iterable)
+
+filter(lambda num : is_float, my_list)
+
+def is_float(num):
+		return int(float_num)
