@@ -1,0 +1,68 @@
+http://kagerato.net/articles/software/libraries/jinja-quickstart.html
+
+1. The templates compile at runtime into Python code, improving performance by eliminating
+both the need to reparse and any unnecessary intermediate formats.
+
+2. Jinja has been used by prominent organizations, including Mozilla and SourceForge.
+3. API Overview:
+        There are two key objects in the Jinja API: Environment and Template.
+        Beyond these key objects, there is also a secondary set used for reading the template files,classified as Loaders.
+        The loaders of significance for typical use are FileSystemLoader, PackageLoader, and DictLoader.
+
+4. Steps in Template Processing:
+    a. Ordinarily, the process one will use to transform a template and its inputs into a rendered output file has four steps.
+    First, select and construct an appropriate loader object.
+    Second, create an environment object while specifying that new loader and any other desired options.
+    Third, use the environment's get_template method to read the template file using the loader, and store the resulting template object.
+    Fourth and finally, process the template by passing any inputs into the render method of the template object.
+
+5. Listing 1a: sample Python code
+
+# Load the jinja library's namespace into the current module.
+
+import jinja2
+
+# In this case, we will load templates off the filesystem.
+# This means we must construct a FileSystemLoader object.
+#
+# The search path can be used to make finding templates by
+#   relative paths much easier.  In this case, we are using
+#   absolute paths and thus set it to the filesystem root.
+templateLoader = jinja2.FileSystemLoader( searchpath="/" )
+
+# An environment provides the data necessary to read and
+#   parse our templates.  We pass in the loader object here.
+templateEnv = jinja2.Environment( loader=templateLoader )
+
+# This constant string specifies the template file we will use.
+TEMPLATE_FILE = "/home/user/site/example1.jinja"
+
+# Read the template file using the environment object.
+# This also constructs our Template object.
+template = templateEnv.get_template( TEMPLATE_FILE )
+
+# Specify any input variables to the template as a dictionary.
+templateVars = { "title" : "Test Example",
+                 "description" : "A simple inquiry of function." }
+
+# Finally, process the template to produce our final text.
+outputText = template.render( templateVars )
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}" />
+</head>
+
+<body>
+
+<div id="content">
+  <p>Why, hello there!</p>
+</div>
+
+</body>
+</html>
