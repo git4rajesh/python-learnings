@@ -1,0 +1,13 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <ns:Update xmlns:ns="http://schemas.planview.com/PlanviewEnterprise/Services/TaskService3/2012/08">
+      <ns:dtos>
+        <ns1:TaskDto2 xmlns:ns1="http://schemas.planview.com/PlanviewEnterprise/OpenSuite/Dtos/TaskDto2/2012/08">
+          <ns1:Description> This is my Description</ns1:Description>
+          <ns1:Duration>10</ns1:Duration>
+        </ns1:TaskDto2>
+      </ns:dtos>
+    </ns:Update>
+  </soapenv:Body>
+</soapenv:Envelope>

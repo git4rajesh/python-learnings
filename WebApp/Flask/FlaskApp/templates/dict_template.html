@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+
+<body>
+    <table border = 1>
+    {% for artifact in dict_artifact %}
+        <tr>
+               <th> {{ artifact }} </th>
+               <td> {{ dict_artifact[artifact] }} </td>
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>

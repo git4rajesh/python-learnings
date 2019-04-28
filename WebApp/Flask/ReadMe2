@@ -1,0 +1,33 @@
+1. An object of Flask class is our WSGI application.
+Flask constructor takes the name of current module (__name__) as argument.
+     app = Flask(__name__)
+
+2. The route() function of the Flask class is a decorator,
+which tells the application which URL should call the associated function.
+
+@app.route('/')
+def example_index():
+    return "Hello Welcome"
+
+2b. app.route(rule, options)
+The rule parameter represents URL binding with the function.
+The options is a list of parameters to be forwarded,
+to the underlying Werkzeug server.
+
+3. Finally the run() method of Flask class runs the application on the local development server.
+
+app.run(host, port, debug, options)
+
+4. Debug mode
+A Flask application is started by calling the run() method.
+However, while the application is under development, it should be restarted manually for each change in the code.
+To avoid this inconvenience, enable debug support. The server will then reload itself if the code changes.
+
+The Debug mode is enabled
+i. by setting the debug property of the application object to True before running
+app.debug = True
+app.run()
+
+or
+ii. passing the debug parameter to the run() method.
+app.run(debug = True)
