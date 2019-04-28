@@ -1,0 +1,34 @@
+1. @pytest.mark.parametrize: parametrizing test functions
+
+# content of test_expectation.py
+import pytest
+@pytest.mark.parametrize("test_input,expected", [
+    ("3+5", 8),
+    ("2+4", 6),
+    ("6*9", 42),
+])
+def test_eval(test_input, expected):
+    assert eval(test_input) == expected
+	
+	
+	
+2. import pytest
+@pytest.mark.slowtest
+def test_function():
+   pass
+   
+   
+3. Fixtures as Function arguments:
+
+# content of ./test_smtpsimple.py
+import pytest
+
+@pytest.fixture
+def smtp():
+    import smtplib
+    return smtplib.SMTP("smtp.gmail.com", 587, timeout=5)
+
+def test_ehlo(smtp):
+    response, msg = smtp.ehlo()
+    assert response == 250
+    assert 0 # for demo purposes

@@ -1,0 +1,10 @@
+{
+  "ex_call_count.py::test_wrapper_get_pve": true,
+  "ex_call_count.py::test_wrapper_get_pve_v2": true,
+  "ex_patch.py::test_is_innotas_without_mock": true,
+  "ex_patch.py::test_some_func": true,
+  "test_car.py": true,
+  "test_car.py::TestCase": true,
+  "test_car.py::test_new_car_spec": true,
+  "test_car.py::test_new_car_spec::test_drive": true
+}

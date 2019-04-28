@@ -1,0 +1,1 @@
+http://chriskiehl.com/article/Cleaner-coding-through-partially-applied-functions/
