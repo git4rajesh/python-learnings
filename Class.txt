@@ -1,0 +1,7 @@
+1. To get class level documentation :
+	print(MyClass.__doc__)
+
+2.	Similarly we can get the Documented String for a Function too as
+	
+	MyClass.func1.__doc__
+
