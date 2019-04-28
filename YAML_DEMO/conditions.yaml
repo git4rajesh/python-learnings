@@ -1,0 +1,8 @@
+Brand: ['Brand-X', 'Brand-Y', 'Brand-A']
+Version: [1, 2, 3]
+Platform: ['98', 'NT', '2000', 'XP']
+
+Conditions:
+#           - "if Brand == 'Brand-X': Platform = '98'"
+#           - "if Version > 2 : Platform = 'NT'"
+           - "if Brand =='Brand-X' : Version < 3"

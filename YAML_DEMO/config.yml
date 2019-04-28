@@ -1,0 +1,36 @@
+rajesh:
+	env : BLEVMPVE01.sthlm.projectplace.com
+	db_name : pe_sreeram
+	pve_pwd : 7fc91d5b526ab20a8855311a1105e32b80bdd1c2
+	father_key : key://2/$Plan/9049
+	resource_mapping : {
+						 ""pve_resource"": 9381,
+						 ""pve_resource_1"": 9382,
+						 ""pve_resource_2"": 9383
+						}	
+
+	pve_payroll_code : key://2/$Payroll/PrStdTimRt	
+
+
+	requirement : {
+				 ""ExpireEffort"": ""key://2/Wbs15/Wbs15$EE"",
+				 ""MaintainEffort"": ""key://2/Wbs15/Wbs15$ME"",
+				 ""MaintainPendingEffort"": ""key://2/Wbs15/Wbs15$ROPE""
+				}	
+
+
+	allocation : {
+				 ""RespectDurationsandProfiles"": ""key://2/Wbs16/Wbs16$DUR"",
+				 ""ExpireEffortandRespectFinishDates"": ""key://2/Wbs16/Wbs16$EE"",
+				 ""RespectFinishDates"": ""key://2/Wbs16/Wbs16$FIN""
+				}	
+
+
+	reserves :{
+				 ""RespectDurationsandProfiles"": ""key://2/Wbs17/Wbs17$DUR"",
+				 ""ExpireEffortandRespectFinishDates"": ""key://2/Wbs17/Wbs17$EE"",
+				 ""RespectFinishDates"": ""key://2/Wbs17/Wbs17$FIN""
+				}
+
+
+
